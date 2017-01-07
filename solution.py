@@ -14,7 +14,7 @@ def balance(weights, left, right):
     else:
         return 0
 
-def test(weights, answer):
+def test(weights):
     test0 = balance(weights, [0,1,2,3], [4,5,6,7])
 
     if test0 == 0:
@@ -59,13 +59,13 @@ def main():
     for i in xrange(12):
         weights = [1] * 12
         weights[i] = 1.5
-        result = test(weights, i)
+        result = test(weights)
         print str(weights) + " Result " + str(result)
         if result != i:
             print "Test " + str(i) + " too heavy failed with result " + str(result)
 
         weights[i] = 0.5
-        result = test(weights, i)
+        result = test(weights)
         print str(weights) + " Result " + str(result)
         if result != i:
             print "Test " + str(i) + " too light failed with result " + str(result)
